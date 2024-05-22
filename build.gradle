@@ -83,17 +83,15 @@ jacoco {
 
 jacocoTestReport {
     dependsOn test
-    
+
     afterEvaluate {
         classDirectories.setFrom(files(classDirectories.files.collect {
             fileTree(dir: it, exclude: [
-                "com.mkdata.hrms.auth.infra.security.jwt/**",
-                "com.mkdata.hrms.auth.domain.dto/**",
-                "com.mkdata.hrms.auth.domain.exception/**",
+               ""
             ])
         }))
     }
-    
+
     reports {
         xml {
             enabled true
@@ -104,7 +102,7 @@ jacocoTestReport {
             enabled true
             html.outputLocation.set(layout.buildDirectory.dir("$buildDir/reports/jacoco"))
         }
-        
+
     }
 }
 
